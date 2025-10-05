@@ -1,1 +1,243 @@
-<meta http-equiv="refresh" content="0; url=https://www.example.com">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>一心向党 建设美丽中国</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Noto Serif SC', serif;
+            background: linear-gradient(135deg, #7a0000 0%, #9a1a1a 50%, #7a0000 100%);
+            color: #f8f8f8;
+            line-height: 1.7;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        .container {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .patriotic-text {
+            font-size: 1.4rem;
+            font-weight: 400;
+            margin-bottom: 24px;
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
+        }
+        
+        .patriotic-text:nth-child(1) { animation-delay: 0.2s; }
+        .patriotic-text:nth-child(2) { animation-delay: 0.4s; }
+        .patriotic-text:nth-child(3) { animation-delay: 0.6s; }
+        .patriotic-text:nth-child(4) { animation-delay: 0.8s; }
+        .patriotic-text:nth-child(5) { animation-delay: 1.0s; }
+        .patriotic-text:nth-child(6) { animation-delay: 1.2s; }
+        .patriotic-text:nth-child(7) { animation-delay: 1.4s; }
+        .patriotic-text:nth-child(8) { animation-delay: 1.6s; }
+        .patriotic-text:nth-child(9) { animation-delay: 1.8s; }
+        .patriotic-text:nth-child(10) { animation-delay: 2.0s; }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .highlight {
+            color: #FFE066;
+            font-weight: 500;
+            font-size: 1.5rem;
+            margin: 28px 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .highlight::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 10%;
+            width: 80%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #FFE066, transparent);
+        }
+        
+        .final-line {
+            font-size: 1.6rem;
+            margin-top: 40px;
+            color: #FFE066;
+            font-weight: 600;
+            position: relative;
+            padding: 15px 30px;
+            display: inline-block;
+        }
+        
+        .final-line::before, .final-line::after {
+            content: '✦';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #FFE066;
+            font-size: 1.2rem;
+        }
+        
+        .final-line::before {
+            left: 0;
+        }
+        
+        .final-line::after {
+            right: 0;
+        }
+        
+        /* 装饰性元素 */
+        .decoration {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        .corner {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+        }
+        
+        .corner-tl {
+            top: 20px;
+            left: 20px;
+            border-top: 1px solid rgba(255, 224, 102, 0.3);
+            border-left: 1px solid rgba(255, 224, 102, 0.3);
+        }
+        
+        .corner-tr {
+            top: 20px;
+            right: 20px;
+            border-top: 1px solid rgba(255, 224, 102, 0.3);
+            border-right: 1px solid rgba(255, 224, 102, 0.3);
+        }
+        
+        .corner-bl {
+            bottom: 20px;
+            left: 20px;
+            border-bottom: 1px solid rgba(255, 224, 102, 0.3);
+            border-left: 1px solid rgba(255, 224, 102, 0.3);
+        }
+        
+        .corner-br {
+            bottom: 20px;
+            right: 20px;
+            border-bottom: 1px solid rgba(255, 224, 102, 0.3);
+            border-right: 1px solid rgba(255, 224, 102, 0.3);
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .patriotic-text {
+                font-size: 1.2rem;
+            }
+            
+            .highlight {
+                font-size: 1.3rem;
+            }
+            
+            .final-line {
+                font-size: 1.4rem;
+            }
+            
+            .corner {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .patriotic-text {
+                font-size: 1.1rem;
+            }
+            
+            .highlight {
+                font-size: 1.2rem;
+            }
+            
+            .final-line {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="decoration">
+        <div class="corner corner-tl"></div>
+        <div class="corner corner-tr"></div>
+        <div class="corner corner-bl"></div>
+        <div class="corner corner-br"></div>
+    </div>
+    
+    <div class="container">
+        <div class="patriotic-text">
+            同志，退出情场，一心向党，爱国爱党，成绩高涨
+        </div>
+        
+        <div class="patriotic-text">
+            不要去经历爱情的考验，要去经历党和人民的考验
+        </div>
+        
+        <div class="patriotic-text">
+            无需梦中情郎，争做国家栋梁
+        </div>
+        
+        <div class="highlight">
+            智者不入爱河，建设美丽中国
+        </div>
+        
+        <div class="patriotic-text">
+            同志，爱情是虚无飘渺的，但共产主义是真实的
+        </div>
+        
+        <div class="patriotic-text">
+            退出情场一心向党 爱国爱党 成绩理想
+        </div>
+        
+        <div class="patriotic-text">
+            同学们不要去经历爱情的考验，去经历党和人民的考验
+        </div>
+        
+        <div class="patriotic-text">
+            无需梦中情郎 争做国家栋梁 智者不入爱河，建设美丽中国！
+        </div>
+        
+        <div class="patriotic-text">
+            心中有党！万事理想！
+        </div>
+        
+        <div class="final-line">
+            相信国家相信党！相信爱情没有好下场！
+        </div>
+    </div>
+</body>
+</html>

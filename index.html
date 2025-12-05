@@ -6,170 +6,195 @@
     <title>白茶AI - 你的专属恋爱伴侣</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* 基础样式 */
+        /* 基础样式 - 简约黑白风 */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
-            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
             color: #333;
-            background: linear-gradient(135deg, #f9f7fe 0%, #f0edf5 100%);
+            background-color: #fafafa;
             min-height: 100vh;
         }
         .container {
             width: 90%;
-            max-width: 1200px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 20px;
         }
 
-        /* 头部样式 */
+        /* 头部样式 - 极简 */
         header {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem 3rem;
         }
         .logo {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            color: #ff6b93; /* 主色调 */
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            color: #222;
         }
         h1 {
             font-size: 2.8rem;
-            color: #2d2d2d;
-            margin-bottom: 0.5rem;
+            font-weight: 300;
+            color: #111;
+            margin-bottom: 0.8rem;
+            letter-spacing: -0.5px;
         }
         .slogan {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: #666;
             font-weight: 300;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        /* 线路引导区样式 */
+        /* 线路引导区样式 - 简约卡片 (已修复居中问题) */
         .access-section {
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 2.5rem;
-            margin: 2rem 0 4rem 0;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            text-align: center;
+            margin: 0 0 3rem 0;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #eee;
+            text-align: center; /* 确保内部文本和行内元素居中 */
         }
         .section-title {
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: #444;
+            font-size: 1.6rem;
+            font-weight: 400;
+            margin-bottom: 1rem;
+            color: #222;
         }
         .route-buttons {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 1.2rem;
             margin-top: 2rem;
         }
         .route-btn {
-            flex: 1;
-            min-width: 250px;
-            padding: 1.8rem 1rem;
-            background: linear-gradient(to right, #ff7eb3, #ff6b93);
+            /* 关键修改：移除 flex: 1，改为固定弹性基础并允许收缩 */
+            flex: 0 1 auto;
+            min-width: 240px;
+            max-width: 100%; /* 防止在非常小的屏幕上过宽 */
+            padding: 1.5rem 1rem;
+            background: #111;
             color: white;
-            border: none;
-            border-radius: 12px;
-            font-size: 1.4rem;
-            font-weight: 600;
+            border: 1px solid #111;
+            border-radius: 8px;
+            font-size: 1.2rem;
+            font-weight: 500;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
             text-decoration: none;
-            display: block;
             text-align: center;
+            display: block; /* 确保作为块元素填充宽度 */
         }
         .route-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(255, 107, 147, 0.4);
+            background: white;
+            color: #111;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
         }
         .route-btn.secondary {
-            background: linear-gradient(to right, #6a89cc, #4a69bd);
+            background: white;
+            color: #111;
+            border: 1px solid #ddd;
+        }
+        .route-btn.secondary:hover {
+            background: #111;
+            color: white;
+            border-color: #111;
         }
         .route-btn .desc {
             display: block;
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: normal;
-            opacity: 0.9;
+            opacity: 0.7;
             margin-top: 0.5rem;
         }
 
-        /* 特点介绍区样式 */
+        /* 特点介绍区样式 - 网格卡片 */
         .features-section {
-            margin-top: 3rem;
+            margin-top: 2rem;
         }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.8rem;
             margin-top: 2rem;
         }
         .feature-card {
             background: white;
             padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
-            transition: transform 0.3s ease;
+            border-radius: 10px;
+            border: 1px solid #eee;
+            transition: all 0.25s ease;
         }
         .feature-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-5px);
+            border-color: #ccc;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
         }
         .feature-card i {
-            font-size: 2.5rem;
-            color: #ff6b93;
+            font-size: 2.2rem;
+            color: #222;
             margin-bottom: 1.2rem;
         }
         .feature-card h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
+            font-weight: 500;
             margin-bottom: 0.8rem;
-            color: #444;
+            color: #222;
         }
         .feature-card p {
-            color: #666;
-            font-size: 1rem;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         /* 反馈区域样式 */
         .feedback-section {
             background: white;
-            border-radius: 20px;
+            border-radius: 12px;
             padding: 2rem;
             margin: 3rem 0;
             text-align: center;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.04);
+            border: 1px solid #eee;
         }
         .feedback-section h2 {
-            color: #444;
-            margin-bottom: 1rem;
+            color: #222;
+            margin-bottom: 0.8rem;
+            font-weight: 400;
         }
         .feedback-email {
             display: inline-flex;
             align-items: center;
             gap: 0.8rem;
-            padding: 1rem 2rem;
+            padding: 0.9rem 1.8rem;
             margin-top: 1rem;
-            background: #f8f9fa;
+            background: #f5f5f5;
             border-radius: 50px;
-            font-size: 1.1rem;
+            font-size: 1rem;
             color: #333;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.25s ease;
         }
         .feedback-email:hover {
-            background: #e9ecef;
-            transform: scale(1.05);
+            background: #111;
+            color: white;
         }
         .feedback-email i {
-            color: #ff6b93;
+            color: #555;
+        }
+        .feedback-email:hover i {
+            color: white;
         }
 
         /* 页脚 */
         footer {
             text-align: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
             padding: 2rem;
-            color: #999;
+            color: #777;
             font-size: 0.9rem;
             border-top: 1px solid #eee;
         }
@@ -177,9 +202,10 @@
         /* 响应式调整 */
         @media (max-width: 768px) {
             h1 { font-size: 2.2rem; }
-            .route-buttons { flex-direction: column; align-items: center; }
-            .route-btn { width: 100%; max-width: 350px; }
-            .feedback-email { padding: 0.8rem 1.5rem; font-size: 1rem; }
+            .access-section { padding: 2rem; }
+            .route-buttons { flex-direction: column; align-items: center; } /* 确保列布局时也居中 */
+            .route-btn { width: 100%; max-width: 350px; } /* 在手机上控制最大宽度 */
+            .features-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -197,7 +223,7 @@
         <!-- 核心：线路访问引导区 -->
         <section class="access-section">
             <h2 class="section-title">请选择最适合你的访问线路</h2>
-            <p style="color: #777; margin-bottom: 1rem;">如果一条线路访问缓慢或中断，请尝试另一条。</p>
+            <p style="color: #666; margin-bottom: 1rem;">如果一条线路访问缓慢或中断，请尝试另一条。</p>
             
             <div class="route-buttons">
                 <!-- 线路一按钮 -->
@@ -206,12 +232,12 @@
                     <span class="desc">推荐国内用户使用</span>
                 </a>
                 <!-- 线路二按钮 -->
-                <a href="https://bc.us.ci" class="route-btn secondary" target="_blank">
+                <a href="http://bc.us.ci" class="route-btn secondary" target="_blank">
                     立即体验 · 线路二
                     <span class="desc">全球加速 / 备用线路</span>
                 </a>
             </div>
-            <p style="color: #888; font-size: 0.9rem; margin-top: 1.5rem;">
+            <p style="color: #777; font-size: 0.9rem; margin-top: 1.5rem;">
                 <i class="fas fa-info-circle"></i> 提示：两个线路功能完全一致，只为保障您的最佳访问体验。
             </p>
         </section>
@@ -251,12 +277,12 @@
                 <i class="fas fa-envelope"></i>
                 suibianle01@qq.com
             </a>
-            <p style="color: #888; font-size: 0.9rem; margin-top: 1rem;">我们会在24小时内回复您的邮件。</p>
+            <p style="color: #777; font-size: 0.9rem; margin-top: 1rem;">我们会在24小时内回复您的邮件。</p>
         </section>
 
         <footer>
-            <p>© 2023 白茶AI. 致力于提供温暖的情感陪伴体验。</p>
+            <p>© 2025 白茶AI. 致力于提供温暖的情感陪伴体验。</p>
         </footer>
     </div>
 </body>
-</html>
+                                                            </html>
